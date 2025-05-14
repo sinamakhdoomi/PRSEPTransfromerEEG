@@ -1,0 +1,20 @@
+Theta Band - K-Fold Results:
+
+Mean Accuracy:  59.39% ± 9.48
+Mean Precision: 65.38% ± 6.35
+Mean Recall:    59.39% ± 9.48
+Mean F1 Score:  59.18% ± 10.09
+Mean Kappa:     39.09% ± 14.22
+
+Mean Fold Runtime (Pretrain + Classification): 203.46 s ± 36.84 s
+
+=== Last Fold Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.71      0.61      0.65       237
+           1       0.63      0.77      0.70       237
+           2       0.89      0.82      0.85       237
+
+    accuracy                           0.73       711
+   macro avg       0.74      0.73      0.73       711
+weighted avg       0.74      0.73      0.73       711
