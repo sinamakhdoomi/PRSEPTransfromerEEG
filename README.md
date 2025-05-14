@@ -29,7 +29,7 @@ Although the sample commands target the *Reach‑and‑Grasp* dataset, the code 
 
 ## Supported datasets
 
-### 1  Reach‑and‑Grasp Dataset \[[Schwarz *etal.* 2020](#references)]
+### 1  Reach‑and‑Grasp Dataset \[[Schwarz *etal.* 2019, 2020](#references)]
 
 * **Participants:** 45 right‑handed
 * **Tasks:** palmar & lateral grasp
