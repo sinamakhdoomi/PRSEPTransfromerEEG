@@ -1,0 +1,20 @@
+Delta Band - K-Fold Results:
+
+Mean Accuracy:  35.36% ± 1.86
+Mean Precision: 55.60% ± 6.75
+Mean Recall:    35.36% ± 1.86
+Mean F1 Score:  24.12% ± 4.66
+Mean Kappa:     3.03% ± 2.80
+
+Mean Fold Runtime (Pretrain + Classification): 115.33 s ± 13.77 s
+
+=== Last Fold Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.33      0.82      0.47       237
+           1       0.46      0.24      0.32       237
+           2       1.00      0.03      0.06       237
+
+    accuracy                           0.36       711
+   macro avg       0.60      0.36      0.28       711
+weighted avg       0.60      0.36      0.28       711

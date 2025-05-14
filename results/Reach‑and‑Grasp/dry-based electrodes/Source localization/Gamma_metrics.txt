@@ -1,0 +1,20 @@
+Gamma Band - K-Fold Results:
+
+Mean Accuracy:  78.76% ± 6.52
+Mean Precision: 80.82% ± 6.89
+Mean Recall:    78.76% ± 6.52
+Mean F1 Score:  77.74% ± 7.10
+Mean Kappa:     68.13% ± 9.78
+
+Mean Fold Runtime (Pretrain + Classification): 306.74 s ± 74.42 s
+
+=== Last Fold Classification Report ===
+              precision    recall  f1-score   support
+
+           0       0.69      0.99      0.81       237
+           1       0.96      0.56      0.71       237
+           2       0.99      0.98      0.99       237
+
+    accuracy                           0.84       711
+   macro avg       0.88      0.84      0.83       711
+weighted avg       0.88      0.84      0.83       711

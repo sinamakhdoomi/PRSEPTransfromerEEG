@@ -1,0 +1,7 @@
+EEGNet K-Fold Results for Delta Band:
+
+Mean Accuracy:  34.60% ± 1.04
+Mean Precision: 51.49% ± 6.04
+Mean Recall:    34.60% ± 1.04
+Mean F1 Score:  21.77% ± 3.15
+Mean Kappa:     1.89% ± 1.59
