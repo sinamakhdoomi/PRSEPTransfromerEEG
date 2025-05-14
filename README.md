@@ -8,6 +8,34 @@ This repository provides an **end‑to‑end pipeline** for preprocessing, sourc
 
 Although the sample commands target the *Reach‑and‑Grasp* dataset, the code can be adapted to other motor‑task EEG collections (e.g. **BCI2000** or **BCI Competition IV 2a**) by adjusting input shapes, trial structures, and subject indices.
 
+
+
+## 🎯 Overview of PRSEPTrans‑EEG Framework
+
+![Framework Overview](/framework.png)
+
+**Figure 1** illustrates the end-to-end pipeline of the proposed PRSEPTrans‑EEG framework, a multimodal deep learning architecture designed to decode grasp-related EEG signals with high accuracy.
+
+The process begins with an experimental protocol involving *palmar* and *lateral* grasp tasks, during which EEG is recorded across three phases: object fixation, reach-and-grasp execution, and rest.
+
+Raw EEG signals are preprocessed using zero-phase Butterworth filtering and ICA-based artifact rejection to remove ocular and muscular noise. The clean signals are then projected to cortical source space using sLORETA, generating high-dimensional source-level features.
+
+An optional **SimCLR-based contrastive pretraining** step is introduced to enhance feature robustness and class separability, especially under low SNR conditions.
+
+The decoding network integrates:
+- **Residual convolutional blocks** with **Squeeze-and-Excitation** modules for spatial feature enhancement,
+- A **Transformer encoder** to model temporal dependencies in the EEG sequences.
+
+Following attention-based encoding, adaptive pooling and fully connected layers perform the final motor task classification.
+
+> This unified framework fuses spatial, spectral, and temporal dynamics to achieve robust classification of motor intentions from cortical activity.
+
+
+
+
+
+
+
 ---
 
 ## Repository structure
