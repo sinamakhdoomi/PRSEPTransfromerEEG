@@ -1,0 +1,7 @@
+Delta Band K-Fold Results:
+
+Mean Accuracy:  57.31% ± 13.08
+Mean Precision: 52.37% ± 21.53
+Mean Recall:    57.31% ± 13.08
+Mean F1 Score:  52.25% ± 19.03
+Mean Kappa:     35.95% ± 19.67

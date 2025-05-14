@@ -1,0 +1,7 @@
+Theta Band K-Fold Results:
+
+Mean Accuracy:  64.47% ± 1.98
+Mean Precision: 61.50% ± 6.37
+Mean Recall:    64.47% ± 1.98
+Mean F1 Score:  59.49% ± 4.34
+Mean Kappa:     46.70% ± 2.97
