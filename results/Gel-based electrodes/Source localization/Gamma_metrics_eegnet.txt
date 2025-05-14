@@ -1,7 +1,0 @@
-EEGNet K-Fold Results for Gamma Band:
-
-Mean Accuracy:  66.06% ± 0.89
-Mean Precision: 65.64% ± 1.10
-Mean Recall:    66.06% ± 0.89
-Mean F1 Score:  65.58% ± 1.09
-Mean Kappa:     49.09% ± 1.34

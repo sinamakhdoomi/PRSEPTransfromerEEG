@@ -1,7 +1,0 @@
-EEGNet K-Fold Results for Alpha Band:
-
-Mean Accuracy:  38.90% ± 10.57
-Mean Precision: 30.76% ± 24.13
-Mean Recall:    38.90% ± 10.57
-Mean F1 Score:  25.26% ± 15.99
-Mean Kappa:     8.35% ± 15.86
