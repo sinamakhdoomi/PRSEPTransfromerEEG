@@ -149,7 +149,7 @@ Each model writes:
 
 ---
 
-## Installation
+## 📦 Installation
 
 ```bash
 pip install -r requirements.txt
