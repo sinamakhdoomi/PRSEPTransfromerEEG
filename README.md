@@ -1,4 +1,5 @@
-# EEG Source‑Space Classification with Deep Learning
+# 🧠 EEG Source‑Space Classification with Deep Learning
+
 
 This repository provides an **end‑to‑end pipeline** for preprocessing, source localization, and classification of EEG data with three deep‑learning models:
 
@@ -25,7 +26,8 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 
 ---
 
-## Repository structure
+## 📁 Repository Structure
+
 
 ```text
 ├── scripts/                  # Python entry points
@@ -42,7 +44,8 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 
 ---
 
-## Supported datasets
+## 📦 Supported Datasets
+
 
 ### 1  Reach‑and‑Grasp Dataset \[[Schwarz *etal.* 2019, 2020](#references)]
 
@@ -71,7 +74,8 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 
 ---
 
-## Getting started
+## ⚙️ Getting Started
+
 
 ### 1  Preprocessing
 
@@ -139,7 +143,8 @@ python scripts/eegnet_script.py \
 
 ---
 
-## Results directory
+## 📊 Results Directory
+
 
 Each model writes:
 
@@ -177,7 +182,8 @@ This project is licensed under the [MIT License](./LICENSE). See the `LICENSE` f
 
 
 
-## References
+## 📚 References
+
 
 <a name="references"></a>
 
