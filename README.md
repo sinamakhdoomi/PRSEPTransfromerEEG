@@ -37,7 +37,6 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 │   ├── resnet18.py
 │   └── eegnet_script.py
 ├── results/                  # Metrics, confusion matrices, logs
-├── source_arrays/            # sLORETA outputs (.npy)
 ├── README.md
 └── requirements.txt
 ```
