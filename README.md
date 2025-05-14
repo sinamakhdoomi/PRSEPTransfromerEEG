@@ -1,90 +1,71 @@
 EEG Source-Space Classification with Deep Learning
-This repository provides a complete pipeline for preprocessing, source localization, and classification of EEG data using multiple deep learning models:
-EEGNet, ResNet-18, and PRSEPTrans-EEG (SE-ResNet + Transformer + SimCLR).
+This repository provides a complete pipeline for preprocessing, source localization, and classification of EEG data using various deep learning models: EEGNet, ResNet-18, and PRSEPTrans-EEG (SE-ResNet + Transformer + SimCLR).
 
-The scripts serve as reference implementations for classifying motor execution and motor imagery tasks from source-reconstructed EEG data. Although the sample code targets the Reach and Grasp dataset, it can be adapted to other datasets (e.g., BCI2000 and BCI Competition IV Dataset 2a) by modifying input shapes, trial structures, and subject counts.
-
-📂 Project Structure
-bash
-Copy
-Edit
-├── scripts/             # All Python scripts
-│   ├── preprocessing.py
-│   ├── sLORETA_source_localization.py
-│   ├── PRSEPTrans.py
-│   ├── resnet18.py
-│   └── eegnet_script.py
-├── results/             # Outputs per model (txt, csv, png, npy)
-├── source_arrays/       # sLORETA data (from preprocessing/localization)
-├── README.md
-└── requirements.txt
 📦 Datasets
-This pipeline supports three publicly available motor task EEG datasets:
+This study utilizes three publicly available EEG datasets:
 
 1. Reach and Grasp Dataset
-Subjects: 45 right-handed participants
+Participants: 45 right-handed individuals
 
 Tasks: Palmar and lateral grasp
 
-EEG Systems:
+Recording Types:
 
-Gel-based: 58 EEG + 6 EOG
+Gel-based (58 EEG + 6 EOG)
 
-Water-based: 32 EEG + 6 EOG
+Water-based (32 EEG + 6 EOG)
 
-Dry electrodes: 11 EEG + 3 EOG
+Dry electrodes (11 EEG + 3 EOG)
 
 Preprocessing:
 
-Zero-phase Butterworth filter (≥0.3 Hz)
+Zero-phase Butterworth filter at 0.3 Hz
 
-ICA for artifact rejection (gel & water systems)
+ICA artifact removal (applied to gel and water-based systems)
 
 Epoching around movement onset
 
-Outlier rejection based on amplitude, kurtosis, and joint probability
+Statistical outlier rejection (amplitude, kurtosis, joint probability)
 
 2. BCI2000 Motor Movement/Imagery Dataset
-Subjects: 109
+Participants: 109
 
-Channels: 64 EEG
+Channels: 64-channel EEG
+
+Tasks: Real and imagined movement of hands and feet
 
 Sampling Rate: 160 Hz
 
-Tasks: Real and imagined movements (hands/feet)
-
 3. BCI Competition IV Dataset 2a
-Subjects: 9
+Participants: 9
+
+Tasks: Left hand, right hand, foot, tongue (motor imagery)
 
 Channels: 22 EEG + 3 EOG
 
 Sampling Rate: 250 Hz
 
-Tasks: Left hand, right hand, feet, and tongue (motor imagery)
-
 ⚙️ How to Run
-Modify parameters according to your dataset's input dimensions and subject count.
-
-1. Preprocessing
+🧹 Preprocessing
 bash
 Copy
 Edit
-python scripts/preprocessing.py \
+python preprocessing.py \
     --data_dir /path/to/ReachGrasp \
     --subjects 15
-2. Source Localization (sLORETA)
+🧠 sLORETA Source Localization
 bash
 Copy
 Edit
-python scripts/sLORETA_source_localization.py \
+python sLORETA_source_localization.py \
     --sensor_file reach_grasp_x.npy \
     --label_file  reach_grasp_y.npy \
     --info_file   reach_grasp_raw.fif
-3. PRSEPTrans-EEG (SE-ResNet + Transformer + SimCLR)
+🕸️ PRSEPTrans-EEG (SE-ResNet + Transformer + SimCLR)
 bash
 Copy
 Edit
-python scripts/PRSEPTrans.py \
+python PRSEPTrans.py \
     --data_root ./source_arrays \
     --bands Delta Theta Alpha Beta Gamma \
     --pretrain_band Theta \
@@ -99,22 +80,22 @@ python scripts/PRSEPTrans.py \
     --n_channels 34 \
     --n_timepoints 257 \
     --seed 42
-4. ResNet-18
+📈 ResNet-18
 bash
 Copy
 Edit
-python scripts/resnet18.py \
+python resnet18.py \
     --data_root ./source_arrays \
     --bands Delta Theta Alpha Beta Gamma \
-    --output_dir ./results/resnet18 \
+    --output_dir ./results_resnet18 \
     --epochs 100 \
     --batch_size 32
-5. EEGNet
+🧠 EEGNet
 bash
 Copy
 Edit
-python scripts/eegnet_script.py \
-    --data_root ./source_arrays \
+python eegnet_script.py \
+    --data_root ./source_data \
     --bands Delta Theta Alpha Beta Gamma \
     --epochs 100 \
     --batch_size 32 \
@@ -123,67 +104,58 @@ python scripts/eegnet_script.py \
     --n_samples 257 \
     --folds 5 \
     --patience 10 \
-    --output_dir ./results/eegnet
-📁 Results
-Each model generates:
-
-Confusion matrices (.csv and .png)
-
-Evaluation metrics (.txt): accuracy, precision, recall, F1, kappa, runtime
-
-Aggregate results (.npy or .json): stored in the results folder
-
-📚 Requirements
-Install required libraries with:
+    --output_dir ./results_eegnet
+📚 Dependencies
+Make sure to install the required libraries:
 
 bash
 Copy
 Edit
-pip install -r requirements.txt
-Required Libraries
-numpy
+pip install numpy pandas matplotlib seaborn scikit-learn torch torchvision mne
+If you're working with .fif files or using MNE features:
 
-pandas
+bash
+Copy
+Edit
+pip install mne
+📁 Outputs
+Each model will generate:
 
-scikit-learn
+.txt files with accuracy, precision, recall, F1-score, kappa, and runtime
 
-matplotlib
+.csv confusion matrices (row-normalized)
 
-seaborn
+.png heatmaps of the confusion matrix
 
-torch
+.npy or .json summary of results for all bands
 
-torchvision
-
-mne (for preprocessing .fif files and EEG source localization)
-
-🧠 Citations
-If you use this work, please cite the following:
+📝 Citation References
+Please cite the following if you use this repository:
 
 less
 Copy
 Edit
-[1] Schwarz, A., Escolano, C., Montesano, L., & Müller-Putz, G.R. (2020). 
-    Analyzing and decoding natural reach-and-grasp actions using gel, water and dry EEG systems. 
-    Frontiers in Neuroscience, 14:849.
+[26] Andreas Schwarz, Carlos Escolano, Luis Montesano, and Gernot R. Müller-Putz. 
+     Analyzing and decoding natural reach-and-grasp actions using gel, water and dry EEG systems.
+     Frontiers in Neuroscience, 14:849, 2020.
 
-[2] Schwarz, A., Pereira, J., Kobler, R., & Müller-Putz, G.R. (2019). 
-    Unimanual and bimanual reach-and-grasp actions can be decoded from human EEG. 
-    IEEE Transactions on Biomedical Engineering, 67(6):1684–1695.
+[27] Andreas Schwarz, Joana Pereira, Reinmar Kobler, and Gernot R. Müller-Putz. 
+     Unimanual and bimanual reach-and-grasp actions can be decoded from human EEG.
+     IEEE Transactions on Biomedical Engineering, 67(6):1684–1695, 2019.
 
-[3] Schalk, G., McFarland, D.J., Hinterberger, T., Birbaumer, N., & Wolpaw, J.R. (2004). 
-    BCI2000: A general-purpose brain–computer interface (BCI) system. 
-    IEEE Transactions on Biomedical Engineering, 51(6):1034–1043.
+[28] Gerwin Schalk, Dennis J. McFarland, Thilo Hinterberger, Niels Birbaumer, and Jonathan R. Wolpaw.
+     BCI2000: A general-purpose brain–computer interface (BCI) system.
+     IEEE Transactions on Biomedical Engineering, 51(6):1034–1043, 2004.
 
-[4] Brunner, C., Leeb, R., Müller-Putz, G., Schlögl, A., & Pfurtscheller, G. (2008). 
-    BCI Competition 2008 – Graz data set A. 
-    Graz University of Technology, Institute for Knowledge Discovery.
+[29] Clemens Brunner, Robert Leeb, Gernot Müller-Putz, Alois Schlögl, and Gert Pfurtscheller.
+     BCI Competition 2008 – Graz data set A.
+     Graz University of Technology, Institute for Knowledge Discovery, 2008.
 
-[5] He, K., Zhang, X., Ren, S., & Sun, J. (2016). 
-    Deep residual learning for image recognition. 
-    In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 770–778.
+[30] Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+     Deep residual learning for image recognition.
+     In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 770–778, 2016.
 
-[6] Lawhern, V.J., Solon, A.J., Waytowich, N.R., Gordon, S.M., Hung, C.P., & Lance, B.J. (2018). 
-    EEGNet: A compact convolutional neural network for EEG-based brain–computer interfaces. 
-    Journal of Neural Engineering, 15(5):056013.
-Let me know if you'd like a badge, license section, or GitHub Actions workflow added!
+[31] Vernon J. Lawhern, Amelia J. Solon, Nicholas R. Waytowich, Stephen M. Gordon, Chou P. Hung, and Brent J. Lance.
+     EEGNet: A compact convolutional neural network for EEG-based brain–computer interfaces.
+     Journal of Neural Engineering, 15(5):056013, 2018.
+Let me know if you’d like to add screenshots, loss curves, or training logs to the README!
