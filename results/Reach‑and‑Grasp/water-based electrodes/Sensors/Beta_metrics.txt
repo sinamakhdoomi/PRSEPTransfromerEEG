@@ -1,0 +1,20 @@
+Beta Band - K-Fold Results:
+
+Mean Accuracy:  54.11% ± 26.07
+Mean Precision: 54.25% ± 36.50
+Mean Recall:    54.11% ± 26.07
+Mean F1 Score:  43.55% ± 32.36
+Mean Kappa:     31.15% ± 39.11
+
+Mean Fold Runtime (Pretrain + Classification): 198.81 s ± 73.58 s
+
+=== Last Fold Classification Report ===
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       237
+           1       1.00      1.00      1.00       237
+           2       1.00      1.00      1.00       237
+
+    accuracy                           1.00       711
+   macro avg       1.00      1.00      1.00       711
+weighted avg       1.00      1.00      1.00       711
