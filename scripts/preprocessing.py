@@ -2,7 +2,7 @@
 """
 Reach‑and‑Grasp EEG preprocessing script
 ---------------------------------------
-* Plain **Python ≥ 3.9**; no large‑language‑model tooling is used anywhere in the pipeline.
+* Plain **Python ≥ 3.9**,
 * Produces three NumPy files—``reach_grasp_x.npy`` (sensor epochs),
   ``reach_grasp_y.npy`` (labels), and ``reach_grasp_raw.fif`` (MNE Raw‑info)
   that downstream sLORETA localisation and classification scripts can load
