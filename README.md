@@ -85,7 +85,7 @@ Below are the best-performing confusion matrices for each dataset using the PRSE
 
 ### 🧪 Gel-based EEG (Gamma Band)
 
-![Gel-based EEG Confusion Matrix] <img src="./results/RG_gelelec_Confusionmatrix.png" width="300">
+![Gel-based EEG Confusion Matrix](./results/RG_gelelec_Confusionmatrix.png) 
 
 **Description**: Rest is classified with high reliability (96.71%), while palmar<sub>grasp</sub> and lateral<sub>grasp</sub> are predicted with 79.22% and 82.25% accuracy. Most errors occur between active grasp tasks, suggesting overlapping cortical sources.
 
