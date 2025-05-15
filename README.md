@@ -139,18 +139,6 @@ python scripts/eegnet_script.py \
     --output_dir ./results/eegnet
 ```
 
----
-
-## 📊 Results Directory
-
-
-Each model writes:
-
-* **Confusion matrices** – `.csv` and `.png`
-* **Metric summary** – `.txt` (accuracy, precision, recall, F1‑score, Cohen’s κ, runtime)
-* **Aggregated folds** – `.npy` or `.json` (per‑band)
-
----
 
 ## 📦 Installation
 
