@@ -1,7 +1,0 @@
-EEGNet K-Fold Results for Beta Band:
-
-Mean Accuracy:  61.82% ± 11.59
-Mean Precision: 60.97% ± 11.84
-Mean Recall:    61.82% ± 11.59
-Mean F1 Score:  61.17% ± 11.97
-Mean Kappa:     42.73% ± 14.92

@@ -1,7 +1,0 @@
-Alpha Band K-Fold Results:
-
-Mean Accuracy:  58.15% ± 6.09
-Mean Precision: 59.87% ± 4.67
-Mean Recall:    58.15% ± 6.09
-Mean F1 Score:  56.87% ± 8.64
-Mean Kappa:     37.23% ± 9.14

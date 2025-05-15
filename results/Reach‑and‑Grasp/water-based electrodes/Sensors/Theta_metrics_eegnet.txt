@@ -1,7 +1,0 @@
-EEGNet K-Fold Results for Theta Band:
-
-Mean Accuracy:  40.58% ± 12.70
-Mean Precision: 40.60% ± 25.64
-Mean Recall:    40.58% ± 12.70
-Mean F1 Score:  27.71% ± 18.33
-Mean Kappa:     10.90% ± 19.03

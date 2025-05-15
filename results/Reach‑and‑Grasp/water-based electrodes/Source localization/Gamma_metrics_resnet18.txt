@@ -1,7 +1,0 @@
-Gamma Band K-Fold Results:
-
-Mean Accuracy:  50.82% ± 8.30
-Mean Precision: 58.78% ± 2.89
-Mean Recall:    50.82% ± 8.30
-Mean F1 Score:  51.42% ± 8.79
-Mean Kappa:     26.23% ± 12.44
