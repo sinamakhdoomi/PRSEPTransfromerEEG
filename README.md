@@ -36,7 +36,6 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 │   ├── PRSEPTrans.py
 │   ├── resnet18.py
 │   └── eegnet_script.py
-├── results/                  # Metrics, confusion matrices, logs
 ├── README.md
 └── requirements.txt
 ```
