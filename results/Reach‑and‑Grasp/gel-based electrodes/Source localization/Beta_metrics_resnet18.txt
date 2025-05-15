@@ -1,7 +1,7 @@
 Beta Band K-Fold Results:
 
-Mean Accuracy:  55.67% ± 2.86
-Mean Precision: 56.61% ± 2.25
-Mean Recall:    55.67% ± 2.86
-Mean F1 Score:  54.69% ± 2.36
-Mean Kappa:     33.51% ± 4.28
+Mean Accuracy:  55.67% Â± 12.73
+Mean Precision: 56.61% Â± 12.82
+Mean Recall:    55.67% Â± 12.73
+Mean F1 Score:  54.69% Â± 13.32
+Mean Kappa:     33.51% Â± 16.84
