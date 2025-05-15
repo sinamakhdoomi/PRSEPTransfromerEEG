@@ -85,35 +85,35 @@ Below are the best-performing confusion matrices for each dataset using the PRSE
 
 ### 🧪 Gel-based EEG (Gamma Band)
 
-![Gel-based EEG Confusion Matrix](./figs/RG_gelelec_Confusionmatrix.png)  
+![Gel-based EEG Confusion Matrix](./results/RG_gelelec_Confusionmatrix.png)  
 **Description**: Rest is classified with high reliability (96.71%), while palmar<sub>grasp</sub> and lateral<sub>grasp</sub> are predicted with 79.22% and 82.25% accuracy. Most errors occur between active grasp tasks, suggesting overlapping cortical sources.
 
 ---
 
 ### 💧 Water-based EEG (Gamma Band)
 
-![Water-based EEG Confusion Matrix](./figs/RG_waterelec_Confusionmatrix.png)  
+![Water-based EEG Confusion Matrix](./results/RG_waterelec_Confusionmatrix.png)  
 **Description**: Palmar<sub>grasp</sub> and lateral<sub>grasp</sub> are each classified above 80% accuracy. Rest is correctly identified in 95.28% of trials. Misclassification still occurs between grasp types.
 
 ---
 
 ### ⚡ Dry-electrode EEG (Alpha Band)
 
-![Dry EEG Confusion Matrix](./figs/RG_dryelec_Confusionmatrix.png)  
+![Dry EEG Confusion Matrix](./results/RG_dryelec_Confusionmatrix.png)  
 **Description**: Despite fewer channels, the model achieves 89%+ for lateral<sub>grasp</sub> and nearly perfect rest classification (99.58%). No rest trials are misclassified.
 
 ---
 
 ### 🧠 BCI Competition IV 2a (Beta Band)
 
-![BCI Competition 2a Confusion Matrix](./figs/BCI2a_Confusionmatrix.png)  
+![BCI Competition 2a Confusion Matrix](./results/BCI2a_Confusionmatrix.png)  
 **Description**: Over 99% accuracy for all four tasks—left hand, right hand, both feet, and tongue. Minor confusion is noted between feet and tongue.
 
 ---
 
 ### 🧪 BCI2000 (Beta Band)
 
-![BCI2000 Confusion Matrix](./figs/BCI2000_Confusionmatrix.png)  
+![BCI2000 Confusion Matrix](./results/BCI2000_Confusionmatrix.png)  
 **Description**: High accuracy exceeding 95% across all motor imagery tasks (IHM<sub>L</sub>, IHM<sub>R</sub>, IFM<sub>L</sub>, IFM<sub>R</sub>) confirms the strength of the PRSEPTrans-EEG pipeline.
 
 
