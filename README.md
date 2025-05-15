@@ -100,7 +100,7 @@ Below are the best-performing confusion matrices for each dataset using the PRSE
 ### ⚡ Dry-electrode EEG (Alpha Band)
 
 ![Dry EEG Confusion Matrix](./results/RG_dryelec_Confusionmatrix.png)  
-**Description**: Despite fewer channels, the model achieves 89%+ for lateral<sub>grasp</sub> and nearly perfect rest classification (99.58%). No rest trials are misclassified.
+**Description**: Despite fewer channels, the model achieves 89%+ for lateral<sub>grasp</sub> and nearly perfect rest classification. No rest trials are misclassified.
 
 ---
 
