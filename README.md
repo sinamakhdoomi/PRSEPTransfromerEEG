@@ -5,17 +5,17 @@ This repository provides an **end‑to‑end pipeline** for preprocessing, sourc
 
 * **EEGNet**
 * **ResNet‑18**
-* **PRSEPTrans‑EEG** (SE‑ResNet + Transformer + SimCLR pre‑training)
+* **PRSEPTransformer‑EEG** (SE‑ResNet + Transformer + SimCLR pre‑training)
 
 Although the sample commands target the *Reach‑and‑Grasp* dataset, the code can be adapted to other motor‑task EEG collections (e.g. **BCI2000** or **BCI Competition IV 2a**) by adjusting input shapes, trial structures, and subject indices.
 
 
 
-## 🎯 Overview of PRSEPTrans‑EEG Framework
+## 🎯 Overview of PRSEPTransformer‑EEG Framework
 
 ![Framework Overview](/framework.png)
 
-The figure above illustrates the end-to-end pipeline of the proposed PRSEPTrans‑EEG framework, a multimodal deep learning architecture designed to decode grasp-related EEG signals with high accuracy. The process begins with an experimental protocol involving *palmar* and *lateral* grasp tasks, during which EEG is recorded across three phases: object fixation, reach-and-grasp execution, and rest. Raw EEG signals are preprocessed using zero-phase Butterworth filtering and ICA-based artifact rejection to remove ocular and muscular noise. The clean signals are then projected to cortical source space using sLORETA, generating high-dimensional source-level features. An optional **SimCLR-based contrastive pretraining** step is introduced to enhance feature robustness and class separability, especially under low SNR conditions.
+The figure above illustrates the end-to-end pipeline of the proposed PRSEPTransformer‑EEG framework, a multimodal deep learning architecture designed to decode grasp-related EEG signals with high accuracy. The process begins with an experimental protocol involving *palmar* and *lateral* grasp tasks, during which EEG is recorded across three phases: object fixation, reach-and-grasp execution, and rest. Raw EEG signals are preprocessed using zero-phase Butterworth filtering and ICA-based artifact rejection to remove ocular and muscular noise. The clean signals are then projected to cortical source space using sLORETA, generating high-dimensional source-level features. An optional **SimCLR-based contrastive pretraining** step is introduced to enhance feature robustness and class separability, especially under low SNR conditions.
 
 The decoding network integrates:
 - **Residual convolutional blocks** with **Squeeze-and-Excitation** modules for spatial feature enhancement,
@@ -33,7 +33,7 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 ├── scripts/                  # Python entry points
 │   ├── preprocessing.py
 │   ├── sLORETA_source_localization.py
-│   ├── PRSEPTrans.py
+│   ├── PRSEPTransformer.py
 │   ├── resnet18.py
 │   └── eegnet_script.py
 ├── results
@@ -80,7 +80,7 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 
 ## 📉 Confusion Matrices Across Datasets
 
-Below are the best-performing confusion matrices for each dataset using the PRSEPTrans-EEG model.
+Below are the best-performing confusion matrices for each dataset using the PRSEPTransformer-EEG model.
 
 ---
 
@@ -116,7 +116,7 @@ Below are the best-performing confusion matrices for each dataset using the PRSE
 ### 🧪 BCI2000 (Beta Band)
 
 ![BCI2000 Confusion Matrix](./results/BCI2000_Confusionmatrix.png)  
-**Description**: High accuracy exceeding 95% across all motor imagery tasks (IHM<sub>L</sub>, IHM<sub>R</sub>, IFM<sub>L</sub>, IFM<sub>R</sub>) confirms the strength of the PRSEPTrans-EEG pipeline.
+**Description**: High accuracy exceeding 95% across all motor imagery tasks (IHM<sub>L</sub>, IHM<sub>R</sub>, IFM<sub>L</sub>, IFM<sub>R</sub>) confirms the strength of the PRSEPTransformer-EEG pipeline.
 
 
 
@@ -142,10 +142,10 @@ python scripts/sLORETA_source_localization.py \
     --info_file   reach_grasp_raw.fif
 ```
 
-### 3  PRSEPTrans‑EEG (SE‑ResNet + Transformer + SimCLR)
+### 3  PRSEPTransformer‑EEG (SE‑ResNet + Transformer + SimCLR)
 
 ```bash
-python scripts/PRSEPTrans.py \
+python scripts/PRSEPTransformer.py \
     --data_root ./source_arrays \
     --bands Delta Theta Alpha Beta Gamma \
     --pretrain_band Theta \
