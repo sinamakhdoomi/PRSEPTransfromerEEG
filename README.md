@@ -13,7 +13,7 @@ Although the sample commands target the *Reach‑and‑Grasp* dataset, the code 
 
 ## 🎯 Overview of PRSEPTransformer‑EEG Framework
 
-![Framework Overview](/framework.png)
+![Framework Overview](/frame.png)
 
 The figure above illustrates the end-to-end pipeline of the proposed PRSEPTransformer‑EEG framework, a multimodal deep learning architecture designed to decode grasp-related EEG signals with high accuracy. The process begins with an experimental protocol involving *palmar* and *lateral* grasp tasks, during which EEG is recorded across three phases: object fixation, reach-and-grasp execution, and rest. Raw EEG signals are preprocessed using zero-phase Butterworth filtering and ICA-based artifact rejection to remove ocular and muscular noise. The clean signals are then projected to cortical source space using sLORETA, generating high-dimensional source-level features. An optional **SimCLR-based contrastive pretraining** step is introduced to enhance feature robustness and class separability, especially under low SNR conditions.
 
