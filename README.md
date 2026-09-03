@@ -36,7 +36,6 @@ Following attention-based encoding, adaptive pooling and fully connected layers 
 │   ├── PRSEPTransformer.py
 │   ├── resnet18.py
 │   └── eegnet_script.py
-├── results
 ├── README.md
 └── requirements.txt
 ```
